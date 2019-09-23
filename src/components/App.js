@@ -42,6 +42,10 @@ class App extends Component {
     }
   }
 
+  toggleIsPaused = () => {
+    this.setState({isPaused: !(this.state.isPaused) });
+  }
+
   reset = () => {
     this.setState({
       breakLength: defaults.breakLength,
@@ -53,9 +57,13 @@ class App extends Component {
     return (
       <div className="app-container">
         <h1>Pomodoro Clock</h1>
-        <DurationSetter type={defaults.breakType}   duration={this.state.breakLength}   up={this.increaseDuration.bind(this)} down={this.decreaseDuration.bind(this)} />
-        <DurationSetter type={defaults.sessionType} duration={this.state.sessionLength} up={this.increaseDuration.bind(this)} down={this.decreaseDuration.bind(this)} />
-        {/* <TimerDisplay /> */}
+        <br />
+        <div class="duration-setters">
+          <DurationSetter type={defaults.breakType}   duration={this.state.breakLength}   up={this.increaseDuration.bind(this)} down={this.decreaseDuration.bind(this)} />
+          <DurationSetter type={defaults.sessionType} duration={this.state.sessionLength} up={this.increaseDuration.bind(this)} down={this.decreaseDuration.bind(this)} />
+        </div>
+        
+        <TimerDisplay reset={this.reset.bind(this)}/>
       </div>
     );
   }

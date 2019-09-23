@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import '../styles/DurationSetter.scss';
 
 const getLabel = (type) => type.charAt(0).toUpperCase() + type.slice(1) + " Length";
@@ -9,13 +11,13 @@ const DurationSetter = (props) => {
     return (
         <div>
             <p id={`${type}-label`}>{label}</p>
-            <div class="duration-setter">
+            <div class="setter-controls">
                 <button id={`${type}-decrement`} onClick={() => down(type)}>
-                    <i className="fa fa-arrow-down"></i>
+                    <FontAwesomeIcon icon={faArrowDown} />
                 </button>
                 <p id={`${type}-length`}>{duration}</p>
                 <button id={`${type}-increment`} onClick={() => up(type)}>
-                    <i className="fa fa-arrow-up"></i>
+                    <FontAwesomeIcon icon={faArrowUp} />
                 </button>
             </div>
         </div>

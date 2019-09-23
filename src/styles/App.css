@@ -1,7 +1,13 @@
 .app-container {
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-  background-color: greenyellow;
+    background-color: greenyellow;
+}
+
+
+.duration-setters {
+	display: flex;
 }

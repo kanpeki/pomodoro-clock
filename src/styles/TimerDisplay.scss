@@ -1,0 +1,6 @@
+@import 'mixins';
+
+#start_stop, #reset
+{
+    @include button-reset;
+}

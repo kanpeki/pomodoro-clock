@@ -1,31 +1,16 @@
-@mixin button-reset {
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
-
-    overflow: hidden;
-    outline:none;
-    background-repeat:no-repeat;
-
-    display: inline-block;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    white-space: nowrap;
-    text-decoration: none;
-
-    background: none;
-  }
+@import 'mixins';
   
-
 button[id$="increment"], button[id$="decrement"]
 {
     @include button-reset;
-
 }
 
-.duration-setter {
+p[id$="length"]
+{
+  padding: 5px;
+  display: inline-block;
+}
+
+.setter-controls {
+ display: flex;
 }
